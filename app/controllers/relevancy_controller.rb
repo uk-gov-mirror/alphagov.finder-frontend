@@ -2,7 +2,7 @@ class RelevancyController < ApplicationController
   skip_before_action :verify_authenticity_token #fix
 
   def create
-    @judgement_set = JudgementSet.new({ query: query_params })
+    @judgement_set = JudgementSet.new({ query: query, organisation: organisation })
     @scores = scores(@judgement_set)
     if @judgement_set.save
       redirect_to search_path,
@@ -16,8 +16,12 @@ class RelevancyController < ApplicationController
 
   private
 
-  def query_params
-    filter_params[:query]
+  def query
+    filter_params["query"]
+  end
+
+  def organisation
+    filter_params["org-name"]
   end
 
   def scores(judgement_set)
