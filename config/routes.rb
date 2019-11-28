@@ -7,11 +7,11 @@ FinderFrontend::Application.routes.draw do
   )
   get "/healthcheck", to: proc { [200, {}, %w[OK]] }
 
-  root to: redirect("/development") unless Rails.env.test?
   get "/development" => "development#index"
 
   get "/search" => "search#index", as: :search
   get "/search/opensearch" => "search#opensearch"
+  root :to => "search#index"
 
   if ENV["GOVUK_WEBSITE_ROOT"] =~ /integration/ || ENV["GOVUK_WEBSITE_ROOT"] =~ /staging/
     get "/test-search/search" => "search#index"
