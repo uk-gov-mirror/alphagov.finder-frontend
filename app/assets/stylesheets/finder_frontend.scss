@@ -407,3 +407,9 @@ mark {
 .message--alert {
   border-color: govuk-colour("red");
 }
+
+// hide footer categories
+
+.footer-categories {
+  display: none;
+}

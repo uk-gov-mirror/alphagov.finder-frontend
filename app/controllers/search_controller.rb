@@ -13,7 +13,6 @@ class SearchController < ApplicationController
     if !search_params.no_search? || params[:format] == "json"
       redirect_to_all_content_finder(search_params) && return
     end
-
     render(action: "no_search_term") && return
   end
 

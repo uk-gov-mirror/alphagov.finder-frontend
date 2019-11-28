@@ -28,6 +28,7 @@ end
 
 group :development, :test do
   gem "awesome_print"
+  gem "database_cleaner"
   gem "dotenv-rails"
   gem "govuk_schemas", "~> 4.0"
   gem "jasmine-rails"

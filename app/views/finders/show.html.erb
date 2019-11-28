@@ -67,7 +67,7 @@
               </h2>
             </div>
               <% end %>
-              <% unless Rails.configuration.relevancy_prototype %>
+              <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
                 <div class="govuk-grid-column-two-thirds subscription-links subscription-links--desktop">
                   <%= render "govuk_publishing_components/components/subscription-links", signup_links %>
                 </div>
@@ -94,7 +94,7 @@
             <%= render "govuk_publishing_components/components/previous_and_next_navigation", @pagination.next_and_prev_links %>
           </div>
         <% end %>
-        <% unless Rails.configuration.relevancy_prototype %>
+        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
           <div class="subscription-links" id="subscription-links-footer">
             <%= render "govuk_publishing_components/components/subscription-links", signup_links %>
           </div>

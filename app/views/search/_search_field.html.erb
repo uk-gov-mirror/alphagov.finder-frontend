@@ -1,5 +1,9 @@
 <% label_text = capture do %>
-  <h1>Help us make GOV.UK search results better</h1>
+  <% if Rails.configuration.relevancy_prototype %>
+    <h1>Help us make GOV.UK search results better</h1>
+  <% else %>
+    <h1>Search GOV.UK</h1>
+  <% end %>
 <% end %>
 
 <%= render "govuk_publishing_components/components/search", {
