@@ -31,6 +31,7 @@ module FinderFrontend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.0
 
+    config.relevancy_prototype = true
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*yml")]
     config.action_view.raise_on_missing_translations = true
 

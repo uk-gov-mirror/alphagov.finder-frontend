@@ -1,4 +1,4 @@
-<% if result_set_presenter.documents.count > 0 %>
+<% if result_set_presenter.total_count > 0 %>
   <form action= "relevancy/create" method="post">
     <div class="govuk-form-group govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -7,7 +7,7 @@
         <div class="govuk-radios govuk-radios--small govuk-radios--inline">
 
         <ol class="gem-c-document-list gem-c-document-list--no-underline">
-          <% result_set_presenter.documents.each_with_index do |document, i| %> 
+          <% result_set_presenter.documents.each_with_index do |document, i| %>
             <li class="gem-c-document-list__item">
               <a class="gem-c-document-list__item-title" href="<%= document.send(:link) %>">
                 <%= document.title %>
@@ -19,11 +19,11 @@
               items: [
                 {
                   value: "perfect",
-                  text: "Perfect match"
+                  text: "Perfect"
                 },
                 {
                   value: "good",
-                  text: "Good match"
+                  text: "Good"
                 },
                 {
                   value: "ok",

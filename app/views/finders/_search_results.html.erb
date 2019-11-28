@@ -17,7 +17,14 @@
   </ul>
 <% else %>
   <div class="finder-results js-finder-results" data-module="track-click">
-    <%= render "result" %>
+    <% if Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+        <%= render "result" %>
+    <% else %>
+      <%= render "govuk_publishing_components/components/document_list", {
+        items: local_assigns[:document_list_component_data],
+        remove_underline: true
+     } %>
+    <% end %>
   </div>
 <% end %>
 
