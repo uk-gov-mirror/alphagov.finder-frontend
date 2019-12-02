@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2019_11_27_142411) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.string "link"
-    t.string "judgement"
-    t.integer "link_position"
+    t.string "link", null: false
+    t.string "judgement", null: false
+    t.integer "link_position", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "judgement_set_id", null: false

@@ -3,8 +3,8 @@ class RelevancyController < ApplicationController
 
   def create
     @judgement_set = JudgementSet.new(query: query, organisation: organisation)
-    @scores = scores(@judgement_set)
-    if @judgement_set.save && @judgement_set.scores.any?
+    @judgement_set.scores.build(score_attributes)
+    if @judgement_set.save
       redirect_to search_path,
                   notice: "<h2>Thank you</h2><p>Your scores have been saved. Score more search results by searching again.</p>"
     else
@@ -23,14 +23,11 @@ private
     filter_params["org-name"]
   end
 
-  def scores(judgement_set)
+  def score_attributes
     if filter_params[:scores]
-      filter_params[:scores].each do |link, judgement|
+      filter_params[:scores].each_with_object([]) do |(link, judgement), scores|
         m = link.match(/(?<index>^\d+)-(?<link>\/.+)/)
-        Score.create(link: m[:link],
-                      judgement: judgement,
-                      judgement_set: judgement_set,
-                      link_position: m[:index])
+        scores << { link: m[:link], judgement: judgement, link_position: m[:index] }
       end
     end
   end
