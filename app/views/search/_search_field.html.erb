@@ -1,6 +1,23 @@
 <% label_text = capture do %>
   <% if Rails.configuration.relevancy_prototype %>
-    <h1>Help us make GOV.UK search results better</h1>
+    <h1>Review GOV.UK search results</h1>
+    <p class="govuk-body">Help us improve GOV.UK search results by scoring search results for relevance to a search term. This information will then be used to improve future search results.</p>
+
+    <h3 class="govuk-heading-m">How to score search results </h3>
+    <ol class="govuk-list govuk-list--number">
+      <li>Search for a popular query in the search bar below.</li>
+      <li>Score each result using this scale.
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Perfect - the most relevant results</li>
+            <li>Good - very likely relevant results</li>
+            <li>Ok - sometimes relevant results</li>
+            <li>Bad - irrelevant results</li>
+          </ul>
+        </li>
+      <li>Enter the organisation (optional).</li>
+      <li>Submit your scores.</li>
+    </ol>
+    <p class="govuk-body">Give feedback on as many search terms as you like. Multiple people can give feedback on the same search term. The more we scores we get, the better search will be.</p>
   <% else %>
     <h1>Search GOV.UK</h1>
   <% end %>
@@ -12,6 +29,7 @@
   size: "large",
   id: "search-main"
 } %>
+
 
 <%= hidden_field_tag("filter_manual[]", params[:filter_manual]) if params[:filter_manual] %>
 <%= hidden_field_tag(:debug_score, params[:debug_score]) if params[:debug_score] %>
