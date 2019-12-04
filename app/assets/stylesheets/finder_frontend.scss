@@ -266,7 +266,7 @@ mark {
 
 .result-info {
   margin: 0 0 govuk-spacing(4) 0;
-  border-bottom: solid 1px govuk-colour("black");
+  // border-bottom: solid 1px govuk-colour("black");
 
   .govuk-grid-column-two-thirds {
     text-align: left;
@@ -379,6 +379,11 @@ mark {
   margin-left: -(govuk-spacing(3));
 }
 
+.gem-c-document-list__item--underline {
+  border-bottom: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
+  padding-bottom: 20px;
+}
+
 // flash message
 .message {
   margin-top: govuk-spacing(6);
@@ -397,6 +402,8 @@ mark {
 
   p {
     @extend .govuk-body;
+    color: govuk-colour("red");
+    font-weight: bold;
   }
 }
 
@@ -406,6 +413,10 @@ mark {
 
 .message--alert {
   border-color: govuk-colour("red");
+}
+.govuk-panel--green {
+  background-color: govuk-colour("green");
+  border-bottom: 0;
 }
 
 // hide footer categories

@@ -8,7 +8,7 @@
 
         <ol class="gem-c-document-list gem-c-document-list--no-underline">
           <% result_set_presenter.documents.each_with_index do |document, i| %>
-            <li class="gem-c-document-list__item">
+            <li class="gem-c-document-list__item gem-c-document-list__item--underline">
               <%= link_to "#{document.title}", "https://gov.uk#{document.send(:link)}", class: "gem-c-document-list__item-title" %>
               <p class="gem-c-document-list__item-description"><%= document.description.html_safe %></p>
               <%= render "govuk_publishing_components/components/radio", {

@@ -8,8 +8,8 @@ class RelevancyController < ApplicationController
       redirect_to search_path,
                   notice: "<h2>Thank you</h2><p>Your scores have been saved. Score more search results by searching again.</p>"
     else
-      redirect_to search_path,
-                  alert: "<h2>There has been an error</h2><p>Please perform another search to score the results.</p>"
+      redirect_to "/search/all?keywords=#{params["query"]}",
+                  alert: "alert"
     end
   end
 

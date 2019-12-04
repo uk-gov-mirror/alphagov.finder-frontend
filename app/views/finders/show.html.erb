@@ -1,3 +1,15 @@
+<% if flash[:alert] == "alert" %>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds message message--alert">
+          <h2>There is a problem</h2>
+          <p class='govuk-error-message'>Please score at least one result.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+<% end %>
 <% if result_set_presenter.user_supplied_keywords.length > 0 %>
   <% content_for :title, "#{result_set_presenter.user_supplied_keywords} - #{content_item.title}" %>
 <% else %>
@@ -57,9 +69,6 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-third">
               <% if (result_set_presenter.total_count > 0 ) && Rails.configuration.relevancy_prototype && current_page?('/search/all')%>
-              <h3 class="result-region-header__counter">
-                How relevant are these results?
-              </h3>
             </div>
               <% else %>
               <h2 class="result-region-header__counter" id="js-result-count">

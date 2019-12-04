@@ -15,7 +15,9 @@
   <body class="mainstream <%= yield :body_classes %>">
     <div id="wrapper" class="govuk-width-container">
       <%= yield %>
-      <%= render 'govuk_publishing_components/components/feedback' %>
+      <% unless Rails.configuration.relevancy_prototype %>
+        <%= render 'govuk_publishing_components/components/feedback' %>
+      <% end %>
     </div>
   </body>
 </html>

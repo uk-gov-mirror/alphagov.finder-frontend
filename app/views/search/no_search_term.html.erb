@@ -5,8 +5,24 @@
   <meta name="description"
         content="Search GOV.UK." />
 <% end %>
-<!-- <main id="content" role="main" class="search-wrapper search-wrapper--no-search-term"> -->
-<%= render 'finders/flash_message' %>
+<% if flash[:notice] %>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation govuk-panel--green">
+            <h1 class="govuk-panel__title">
+              Thank you
+            </h1>
+            <div class="govuk-panel__body">
+              <h2>Your scores have been saved.</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<% end %>
 <main id="content" role="main" class="search no-search-term">
   <form action="/search" method="get" accept-charset="utf-8" class="search-header" role="search">
     <%= render 'search_field' %>

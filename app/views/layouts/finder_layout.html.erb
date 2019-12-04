@@ -16,12 +16,16 @@
 
   <body class="<%= yield :body_classes %>">
     <div id="wrapper">
-      <main id="content" class="finder-frontend-content">
-        <div class="finder-frontend">
+      <!-- <main id="content" class="finder-frontend-content">
+        <div class="finder-frontend"> -->
+      <main id="content" role="main" class="finder-frontend-content">
+        <div id="finder-frontend">
+          <!-- do we need the grid row: -->
+          <div class="govuk-grid-row">
           <%= yield %>
         </div>
       </main>
-      <%# <%= render 'govuk_publishing_components/components/feedback' %> 
+      <%# <%= render 'govuk_publishing_components/components/feedback' %>
     </div>
   </body>
 </html>
