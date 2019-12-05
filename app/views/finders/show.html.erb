@@ -1,13 +1,13 @@
 <% if flash[:alert] == "alert" %>
   <div class="govuk-width-container">
-    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds message message--alert">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="message message--alert">
           <h2>There is a problem</h2>
           <p class='govuk-error-message'>Please score at least one result.</p>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 <% end %>
 <% if result_set_presenter.user_supplied_keywords.length > 0 %>
@@ -42,9 +42,9 @@
     <%= render partial: 'show_header', locals: { inverse: inverse,
                                                  page_metadata: page_metadata(content_item, filter_params) } %>
   <% end %>
-  <% if Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+<% if Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
 </form>
-  <% end %>
+<% end %>
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
@@ -111,6 +111,6 @@
       </div>
     </div>
   </div>
-  <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+<% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
 </form>
-  <% end %>
+<% end %>
