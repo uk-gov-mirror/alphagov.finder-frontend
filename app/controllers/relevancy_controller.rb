@@ -6,7 +6,7 @@ class RelevancyController < ApplicationController
     @judgement_set.scores.build(score_attributes)
     if @judgement_set.save
       redirect_to search_path,
-                  notice: "<h2>Thank you</h2><p>Your scores have been saved. Score more search results by searching again.</p>"
+                  notice: "saved"
     else
       redirect_to "/search/all?keywords=#{params["query"]}",
                   alert: "alert"

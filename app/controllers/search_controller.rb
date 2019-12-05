@@ -13,7 +13,15 @@ class SearchController < ApplicationController
     if !search_params.no_search? || params[:format] == "json"
       redirect_to_all_content_finder(search_params) && return
     end
-    render(action: "no_search_term") && return
+    if Rails.configuration.relevancy_prototype
+      if params.has_key?(:q) && params[:q].blank? 
+        redirect_to search_path, :alert=> "no-term"
+      else
+        render(action: "no_search_term") && return
+      end
+    else
+      render(action: "no_search_term") && return
+    end
   end
 
 protected
