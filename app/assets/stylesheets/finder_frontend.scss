@@ -392,9 +392,6 @@ mark {
   border-style: solid;
   border-width: 3px;
   border-color: govuk-colour("dark-grey", $legacy: "grey-1");
-  @include govuk-media-query($from: tablet) {
-    max-width: (100% / 3) * 2;
-  }
 
   h2 {
     @extend .govuk-heading-m;
