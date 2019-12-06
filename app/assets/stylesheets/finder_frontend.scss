@@ -373,7 +373,7 @@ mark {
 // "document list" govuk-publishing component
 .gem-c-document-list__item {
   border: 0;
-  margin-bottom: govuk-spacing(7);
+  margin-bottom: govuk-spacing(4);
   padding-bottom: govuk-spacing(0);
   padding-left: govuk-spacing(3);
   margin-left: -(govuk-spacing(3));
@@ -381,7 +381,7 @@ mark {
 
 .gem-c-document-list__item--underline {
   border-bottom: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 // flash message
