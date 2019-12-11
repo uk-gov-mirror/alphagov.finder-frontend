@@ -178,12 +178,6 @@ Feature: Filtering documents
     And I press tab key to navigate
     Then I see Relevance order selected
 
-<<<<<<< HEAD
-  Scenario: Subscribing to email alerts
-    Given a collection of documents exist that can be filtered by checkbox
-    When I use a checkbox filter
-    Then I can sign up to email alerts for allowed filters
-=======
   @javascript
   Scenario: Adding keyword filter in business finder
     When I view the business readiness finder
@@ -224,7 +218,6 @@ Feature: Filtering documents
     And The top result has the correct tracking data
 
   Scenario: Subscribing to email alerts - skipping
->>>>>>> Disable email alert signup
 
   Scenario: Subscribing to email alerts with disallowed facets - skipping
 
