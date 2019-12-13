@@ -37,7 +37,6 @@ group :development, :test do
   gem "rspec-rails", "~> 4.0.0.beta4"
   gem "rubocop-govuk"
   gem "scss_lint-govuk"
-  gem 'database_cleaner'
 end
 
 group :test do

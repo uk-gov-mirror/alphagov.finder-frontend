@@ -40,7 +40,9 @@
     <p class='govuk-body govuk-!-font-weight-bold'>There are no matching results.</p>
     <p class='govuk-body'>Improve your search results by:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>removing filters</li>
+      <% unless Rails.configuration.relevancy_prototype %>
+        <li>removing filters</li>
+      <% end %>
       <li>double-checking your spelling</li>
       <li>using fewer keywords</li>
       <li>searching for something less specific</li>

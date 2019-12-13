@@ -14,8 +14,8 @@ class SearchController < ApplicationController
       redirect_to_all_content_finder(search_params) && return
     end
     if Rails.configuration.relevancy_prototype
-      if params.has_key?(:q) && params[:q].blank? 
-        flash.now[:alert] ="no-term"
+      if params.has_key?(:q) && params[:q].blank?
+        flash.now[:alert] = "no-term"
         render(action: "no_search_term")
       else
         render(action: "no_search_term") && return
