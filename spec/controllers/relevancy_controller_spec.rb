@@ -6,7 +6,7 @@ describe RelevancyController, type: :controller do
       "scores" => { "0-/government/publications/code-of-practice-on-noise-from-ice-cream-van-chimes" => "perfect",
                   "1-/government/publications/impulse-ice-cream-undertakings" => "good",
                   "2-/cma-cases/consumable-goods-suspected-anti-competitive-conduct" => "bad",
-                  "3-/cma-cases/r-r-ice-cream-plc-fredericks-dairies-ltd" => "perfect" },
+                  "3-https://www.nhs.uk/using-the-nhs/" => "perfect" },
       "org-name" => "defra",
       "query" => "ice cream",
     }

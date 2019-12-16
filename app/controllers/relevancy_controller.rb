@@ -25,9 +25,11 @@ private
 
   def score_attributes
     if filter_params[:scores]
-      filter_params[:scores].each_with_object([]) do |(link, judgement), scores|
-        m = link.match(/(?<index>^\d+)-(?<link>\/.+)/)
-        scores << { link: m[:link], judgement: judgement, link_position: m[:index] }
+      filter_params[:scores].each_with_object([]) do |(link_with_index, judgement), scores|
+        attrs = link_with_index.split(/(?<=\d)-/)
+        index = attrs[0]
+        link = attrs[1]
+        scores << { link: link, judgement: judgement, link_position: index }
       end
     end
   end
