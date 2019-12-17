@@ -421,3 +421,13 @@ mark {
 .footer-categories {
   display: none;
 }
+
+.app-feedback-prompt {
+  background-color: govuk-colour("blue");
+  padding: 10px 15px 0;
+  color: govuk-colour("white");
+  a,
+  a:visited {
+    color: govuk-colour("white");
+  }
+}
