@@ -5,6 +5,7 @@ class RelevancyController < ApplicationController
     @judgement_set = JudgementSet.new(query: query, organisation: organisation)
     @judgement_set.scores.build(score_attributes)
     if @judgement_set.save
+      session[:orgName] = organisation
       redirect_to search_path,
                   notice: "saved"
     else

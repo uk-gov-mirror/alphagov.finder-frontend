@@ -40,7 +40,8 @@
             label: {
               text: "Enter the name of your organisation"
             },
-            name: "org-name"
+            name: "org-name",
+            value: session[:orgName]
           } %>
           <input class="govuk-input govuk-visually-hidden" id="query" name="query" value="<%= params["keywords"] %>"> </input>
         </div>
