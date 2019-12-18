@@ -109,6 +109,37 @@
           </div>
         <% end %>
       </div>
+      <% if Rails.configuration.relevancy_prototype %>
+        <div class="govuk-grid-column-one-third">
+          <details <% if session[:first_view] == "true" %> open <% end %> class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                How to score results
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <h4 class="govuk-heading-s">Perfect</h4>
+              <p>
+                Based on your search term, the result is completely relevant. More than one result can be perfect.
+              </p>
+              <h4 class="govuk-heading-s">Good</h4>
+              <p>
+                The result is clearly reasonable. You are not surprised that the search term brought back this result.
+              </p>
+              <h4 class="govuk-heading-s">OK</h4>
+              <p>
+                You can see why we returned the result, but it isn't very helpful. For example, a search for
+                “Find my local council” may return a page about how to pay a parking charge to your local council. You can see why it appeared
+                (because it includes a reference to local councils) but it isn’t directly relevant for your search term.
+              </p>
+              <h4 class="govuk-heading-s">Bad</h4>
+              <p>
+                The result has no apparent relationship to your search term.
+              </p>
+            </div>
+          </details>
+        </div>
+      <% end %>
     </div>
   </div>
 <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>

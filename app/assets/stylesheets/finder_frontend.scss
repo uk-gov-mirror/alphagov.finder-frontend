@@ -431,18 +431,3 @@ mark {
     color: govuk-colour("white");
   }
 }
-
-//sticky details on results
-.govuk-detail--sticky {
-  position: fixed;
-  right: 15px;
-  z-index: 2;
-  background: white;
-  width: 33%;
-  padding: 10px;
-  .govuk-details__text {
-    height: 400px;
-    overflow-y: scroll;
-    padding: 10px;
-  }
-}
