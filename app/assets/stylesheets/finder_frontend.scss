@@ -431,3 +431,20 @@ mark {
     color: govuk-colour("white");
   }
 }
+
+.govuk-details--offset {
+  margin-top: 30px;
+}
+
+.govuk-details--hide-on-mobile {
+  display: none;
+  @include govuk-media-query($from: tablet) {
+    display: block;
+  }
+}
+
+.govuk-details--show-on-mobile {
+  @include govuk-media-query($from: tablet) {
+    display: none;
+  }
+}

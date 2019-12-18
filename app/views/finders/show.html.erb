@@ -111,7 +111,7 @@
       </div>
       <% if Rails.configuration.relevancy_prototype %>
         <div class="govuk-grid-column-one-third">
-          <details <% if session[:first_view] == "true" %> open <% end %> class="govuk-details" data-module="govuk-details">
+          <details <% if session[:first_view] == "true" %> open <% end %> class="govuk-details govuk-details--offset govuk-details--hide-on-mobile" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                 How to score results
