@@ -6,6 +6,7 @@ class RelevancyController < ApplicationController
     @judgement_set.scores.build(score_attributes)
     if @judgement_set.save
       session[:orgName] = organisation
+      session[:first_view] = "false"
       redirect_to search_path,
                   notice: "saved"
     else
