@@ -34,3 +34,9 @@ $govuk-use-legacy-palette: false;
 @import 'finder_frontend';
 @import 'views/search';
 @import 'views/brexit_checker_results_page';
+
+.js-enabled #global-cookie-message {
+  display: none !important;
+}
+
+
