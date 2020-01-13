@@ -6,12 +6,7 @@ class ContentItem
   end
 
   def self.from_content_store(base_path)
-    content_item_hash =
-      if Rails.configuration.relevancy_prototype
-        Services.un_cached_content_item(base_path)
-      else
-        Services.cached_content_item(base_path)
-      end
+    content_item_hash = Services.cached_content_item(base_path)
     self.new(content_item_hash)
   end
 
