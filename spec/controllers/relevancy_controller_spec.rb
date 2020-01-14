@@ -5,7 +5,7 @@ describe RelevancyController, type: :controller do
     params = {
       "scores" => { "0-/government/publications/code-of-practice-on-noise-from-ice-cream-van-chimes" => "perfect",
                   "1-/government/publications/impulse-ice-cream-undertakings" => "good",
-                  "2-/cma-cases/consumable-goods-suspected-anti-competitive-conduct" => "bad",
+                  "2-/paye-forms-p45-p60-p11d" => "bad",
                   "3-https://www.nhs.uk/using-the-nhs/" => "perfect" },
       "org-name" => "defra",
       "query" => "ice cream",
