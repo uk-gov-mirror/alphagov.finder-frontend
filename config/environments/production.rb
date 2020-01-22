@@ -10,7 +10,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.cache_store = :dalli_store, nil, { namespace: :finder_frontend, compress: true } unless ENV["HEROKU_APP_NAME"]
+  config.cache_store = :dalli_store, nil, { namespace: :finder_frontend, compress: true } unless ENV["RELEVANCY_PROTOTYPE"]
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
