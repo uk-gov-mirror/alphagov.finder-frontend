@@ -108,7 +108,10 @@ GEM
     cucumber-tag_expressions (1.1.1)
     cucumber-wire (0.0.1)
     dalli (2.7.10)
-    database_cleaner (1.7.0)
+    database_cleaner (1.8.0.beta)
+    database_cleaner-active_record (1.8.0.beta)
+      activerecord
+      database_cleaner (~> 1.8.0.beta)
     debug_inspector (0.0.3)
     declarative (0.0.10)
     declarative-option (0.1.0)
@@ -443,7 +446,7 @@ DEPENDENCIES
   chronic (~> 0.10.2)
   cucumber-rails (~> 2.0.0)
   dalli
-  database_cleaner
+  database_cleaner-active_record
   dotenv-rails
   factory_bot
   gds-api-adapters (~> 63.5)

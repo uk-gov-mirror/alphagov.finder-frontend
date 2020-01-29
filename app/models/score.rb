@@ -6,4 +6,8 @@ class Score < ApplicationRecord
   def judgement=(user_input)
     write_attribute :judgement, SCORES[user_input]
   end
+
+  def invalid_link?
+    UrlValidator.new(self.link).bad_link?
+  end
 end
