@@ -367,7 +367,7 @@ mark {
 .finder-results .gem-c-document-list__item {
   margin-bottom: 20px;
   padding-bottom: 30px;
-
+}
 // remove separator and increase spacing between list items
 // later, propose both features as flags in the
 // "document list" govuk-publishing component
@@ -379,9 +379,9 @@ mark {
   margin-left: -(govuk-spacing(3));
 }
 
-.gem-c-document-list__item--underline {
-  border-bottom: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
-  padding-bottom: 30px;
+.facet-container {
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 // flash message
@@ -422,16 +422,6 @@ mark {
   display: none;
 }
 
-.app-feedback-prompt {
-  background-color: govuk-colour("blue");
-  padding: 10px 15px 0;
-  color: govuk-colour("white");
-  a,
-  a:visited {
-    color: govuk-colour("white");
-  }
-}
-
 .govuk-details--offset {
   margin-top: 30px;
 }
@@ -446,5 +436,15 @@ mark {
 .govuk-details--show-on-mobile {
   @include govuk-media-query($from: tablet) {
     display: none;
+  }
+}
+
+.app-feedback-prompt {
+  background-color: govuk-colour("blue");
+  padding: 10px 15px 0;
+  color: govuk-colour("white");
+  a,
+  a:visited {
+    color: govuk-colour("white");
   }
 }

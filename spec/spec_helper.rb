@@ -9,7 +9,7 @@ ENV["GOVUK_WEBSITE_ROOT"] ||= "https://www.test.gov.uk"
 require File.expand_path("../config/environment", __dir__)
 require "rspec/rails"
 require "webmock/rspec"
-require 'database_cleaner/active_record'
+require "database_cleaner/active_record"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

@@ -1,6 +1,5 @@
 module Relevance
   class LinkFixer
-
     def fix
       i = 0
       fixed = []
@@ -13,7 +12,7 @@ module Relevance
       scores_with_invalid_links.each do |score|
         q = JudgementSet.find(score.judgement_set_id).query
         fresh_links = search_results(q)
-        candidate_link = fresh_links.select{ |link| link.match(score.link)}
+        candidate_link = fresh_links.select { |link| link.match(score.link) }
         if candidate_link.count == 1
           puts "updating score with id: #{score.id}"
           puts "bad link: #{score.link}"
@@ -27,7 +26,7 @@ module Relevance
           puts "---"
         else
           not_fixed << score
-          i +=1
+          i += 1
         end
       end
       puts "#{fixed.count} scores fixed. ID's: #{fixed.pluck(:id)}"
@@ -35,7 +34,7 @@ module Relevance
       puts "#{i} scores had no candidate links. ID's: #{not_fixed.pluck(:id)}"
     end
 
-    private
+  private
 
     def search_results(query)
       response = Faraday.get "https://www.gov.uk/api/search.json?q=#{query}"
@@ -46,8 +45,7 @@ module Relevance
     end
 
     def scores_with_invalid_links
-      @scores ||= Score.select{ |score| score.invalid_link? }
+      @scores_with_invalid_links ||= Score.select(&:invalid_link?)
     end
-
   end
 end

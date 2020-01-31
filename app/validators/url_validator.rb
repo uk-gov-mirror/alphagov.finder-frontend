@@ -1,5 +1,5 @@
-require 'faraday'
-require 'uri'
+require "faraday"
+require "uri"
 
 class UrlValidator
   attr_reader :link
@@ -12,7 +12,7 @@ class UrlValidator
     error_codes.include?(status_code)
   end
 
-  private
+private
 
   def connection
     @connection ||= Faraday.new

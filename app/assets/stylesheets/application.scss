@@ -39,4 +39,6 @@ $govuk-use-legacy-palette: false;
   display: none !important;
 }
 
-
+.js-enabled #user-satisfaction-survey-container {
+  display: none !important;
+}
