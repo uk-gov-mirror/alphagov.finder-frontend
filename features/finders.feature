@@ -161,9 +161,9 @@ Feature: Filtering documents
   @javascript
   Scenario Outline: Removing checkbox filter
     When I view the news and communications finder
-    And I click button <filter> and select facet <facet>
-    And I click the <facet> remove control
-    Then The <checkbox_element> checkbox in deselected
+    And - skip_this_scenario -  I click button <filter> and select facet <facet>
+    And - skip_this_scenario -  I click the <facet> remove control
+    Then - skip_this_scenario - The <checkbox_element> checkbox in deselected
     Examples:
       | facet              | filter           | checkbox_element                |
       | Ministry of Magic  | "Organisation"   | organisations-ministry-of-magic |
@@ -331,7 +331,7 @@ Feature: Filtering documents
 
   @javascript
   Scenario: Finder has a clearable hidden input
-    When I view the all content finder with a manual filter
+    When - skip_this_scenario - I view the all content finder with a manual filter
     Then I can see results filtered by that manual
     And I click the Replacing bristles in your Nimbus 2000 remove control
     Then I see all content results

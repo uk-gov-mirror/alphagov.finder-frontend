@@ -55,7 +55,7 @@
       <div class="govuk-grid-column-two-thirds js-live-search-results-block filtered-results"
         role="region"
         aria-label="<%= content_item.title %> search results"
-        <% unless Rails.configuration.relevancy_prototype %>
+        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
           data-analytics-ecommerce
           data-ecommerce-start-index="<%= result_set_presenter.start_offset %>"
           data-list-title="<%= content_item.title %>"
@@ -76,13 +76,13 @@
               </h2>
             </div>
               <% end %>
-              <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+              <% unless Rails.configuration.relevancy_prototype %>
                 <div class="govuk-grid-column-two-thirds subscription-links subscription-links--desktop">
                   <%= render "govuk_publishing_components/components/subscription-links", signup_links %>
                 </div>
               <% end %>
           </div>
-          <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+          <% unless Rails.configuration.relevancy_prototype %>
             <div id="js-facet-tag-wrapper" aria-live="assertive">
               <%= render "facet_tags", facet_tags.present %>
             </div>
@@ -98,18 +98,18 @@
         <div id="js-results">
           <%= render "search_results", result_set_presenter.search_results_content %>
         </div>
-        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all')%>
           <div id="js-pagination">
             <%= render "govuk_publishing_components/components/previous_and_next_navigation", @pagination.next_and_prev_links %>
           </div>
         <% end %>
-        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+        <% unless Rails.configuration.relevancy_prototype && current_page?('/search/all')%>
           <div class="subscription-links" id="subscription-links-footer">
             <%= render "govuk_publishing_components/components/subscription-links", signup_links %>
           </div>
         <% end %>
       </div>
-      <% if Rails.configuration.relevancy_prototype %>
+      <% if Rails.configuration.relevancy_prototype && current_page?('/search/all')%>
         <div class="govuk-grid-column-one-third">
           <details <% if session[:first_view] == "true" %> open <% end %> class="govuk-details govuk-details--offset govuk-details--hide-on-mobile" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -142,6 +142,6 @@
       <% end %>
     </div>
   </div>
-<% unless Rails.configuration.relevancy_prototype && current_page?('/search/all') %>
+<% unless Rails.configuration.relevancy_prototype %>
 </form>
 <% end %>
