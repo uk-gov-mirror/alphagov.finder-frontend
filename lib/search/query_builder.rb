@@ -44,7 +44,6 @@ module Search
 
     attr_reader :finder_content_item, :params, :ab_params, :override_sort_for_feed
 
-
     def pagination_query
       {
         "count" => documents_per_page,
@@ -61,7 +60,7 @@ module Search
     end
 
     def documents_per_page
-      search_relevancy_prototype? ? 10 : finder_content_item.default_documents_per_page
+      search_relevancy_prototype? ? 20 : finder_content_item.default_documents_per_page
     end
 
     def search_relevancy_prototype?
