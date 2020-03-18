@@ -41,7 +41,7 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.version = "1.0"
   config.action_controller.asset_host = ENV["GOVUK_ASSET_HOST"]
-  config.slimmer.asset_host = Plek.current.find("static")
+  # config.slimmer.asset_host = Plek.current.find("static")
   config.log_level = :info
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
