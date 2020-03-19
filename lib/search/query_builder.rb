@@ -138,16 +138,11 @@ module Search
     end
 
     def base_filter_query
-      @base_filter_query ||= base_filter.each_with_object({}) do |(k, v), query|
-        query["filter_#{k}"] = v
-      end
+      @base_filter_query ||= base_filter.transform_keys { |k| "filter_#{k}" }
     end
 
     def and_filter_query
-      @and_filter_query ||= and_filter_params
-        .each_with_object({}) do |(k, v), query|
-          query["filter_#{k}"] = v
-        end
+      @and_filter_query ||= and_filter_params.transform_keys { |k| "filter_#{k}" }
     end
 
     def and_filter_params

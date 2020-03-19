@@ -31,7 +31,7 @@ namespace :brexit_checker do
     end
 
     if criteria.is_a? Hash
-      return Hash[criteria.map { |k, v| [k, criteria_rules(v)] }]
+      return criteria.transform_values { |v| criteria_rules(v) }
     end
 
     if criteria.is_a? Array

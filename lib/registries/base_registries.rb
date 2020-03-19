@@ -16,19 +16,11 @@ module Registries
     end
 
     def ensure_warm_cache
-      all.values.each { |registry|
-        if registry.can_refresh_cache?
-          registry.fetch_from_cache
-        end
-      }
+      all.each_value.select(&:can_refresh_cache?).each(&:fetch_from_cache)
     end
 
     def refresh_cache
-      all.values.each { |registry|
-        if registry.can_refresh_cache?
-          registry.refresh_cache
-        end
-      }
+      all.each_value.select(&:can_refresh_cache?).each(&:refresh_cache)
     end
 
   private

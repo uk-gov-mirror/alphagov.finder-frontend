@@ -35,7 +35,7 @@ group :development, :test do
   gem "listen"
   gem "pry-byebug"
   gem "rspec-rails", "~> 4.0.0.rc1"
-  gem "rubocop-govuk"
+  gem "rubocop-govuk", "3.3.0"
   gem "scss_lint-govuk"
 end
 
