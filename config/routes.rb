@@ -18,6 +18,9 @@ FinderFrontend::Application.routes.draw do
     get "/test-search/search/opensearch" => "search#opensearch"
   end
 
+  # Routes for local restrictions postcode lookup
+  get "/find-coronavirus-local-restrictions" => "coronavirus_local_restrictions#show"
+
   # Routes for the for Transition/Brexit Checker
   get "/transition-check/results" => "brexit_checker#results", as: :transition_checker_results
   get "/transition-check/questions" => "brexit_checker#show", as: :transition_checker_questions
