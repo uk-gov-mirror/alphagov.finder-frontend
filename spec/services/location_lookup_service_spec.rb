@@ -70,5 +70,12 @@ RSpec.describe LocationLookupService do
 
       expect(described_class.new(postcode).data).to eq([])
     end
+
+    it "returns an error if the postcode is not valid" do
+      invalid_postcode = "hello"
+      stub_mapit_does_not_have_a_bad_postcode(invalid_postcode)
+
+      expect(described_class.new(invalid_postcode).data).to eq("hello")
+    end
   end
 end

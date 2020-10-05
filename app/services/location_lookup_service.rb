@@ -6,6 +6,7 @@ class LocationLookupService
   end
 
   def data
+    binding.pry
     location_data = areas.map do |_, area|
       location = MapitPostcodeResponse.new(area)
       location if location.gss
@@ -18,7 +19,7 @@ private
 
   def areas
     return [] if response.blank?
-
+    binding.pry
     response["response"].select { |data| data.first == "areas" }.first.last
   end
 
@@ -27,6 +28,8 @@ private
                     JSON.parse(GdsApi.mapit.location_for_postcode(postcode).to_json)
                   rescue GdsApi::HTTPNotFound
                     []
+                  rescue GdsApi::HTTPClientError => e
+                    { error: e }
                   end
   end
 end
