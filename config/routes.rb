@@ -19,7 +19,11 @@ FinderFrontend::Application.routes.draw do
   end
 
   # Routes for local restrictions postcode lookup
-  get "/find-coronavirus-local-restrictions" => "coronavirus_local_restrictions#show"
+  constraints CoronavirusLocalRestrictionsConstraint.new do
+    get "/find-coronavirus-local-restrictions" => "coronavirus_local_restrictions#show"
+  end
+
+  get "/find-coronavirus-local-restrictions" => "coronavirus_local_restrictions#error_404"
 
   # Routes for the for Transition/Brexit Checker
   get "/transition-check/results" => "brexit_checker#results", as: :transition_checker_results
