@@ -93,7 +93,6 @@ private
 
   def ecommerce_data(link, title, part_index: nil)
     {
-      ecommerce_path: link,
       ecommerce_row: 1,
       ecommerce_index: document.index,
       track_category: "navFinderLinkClicked",
