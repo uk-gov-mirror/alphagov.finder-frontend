@@ -1,30 +1,20 @@
 en:
   brexit_checker:
     account_signup:
-      title: Stay up to date with a GOV.UK account
-      heading: Stay up to date with a GOV.UK account
-      proposition: "Create a GOV.UK account to:"
+      title: Stay up to date about new rules in 2021
+      heading: Stay up to date about new rules in 2021
+      proposition: "There are two different ways to stay up to date:"
       proposition_list:
-        - get email updates about Brexit transition changes that may affect you
-        - save your Brexit transition checker results
-      aim: GOV.UK is trialling accounts to try to improve online public services.
-      aim_list:
-        - This is separate from other government accounts.
-        - At the moment, you can only use your account with the Brexit transition checker.
-      future: "In future, we want to add more features to your account so you can:"
-      future_list:
-        - see content that’s more tailored to you
-        - get recommendations for services relevant to you
-        - get updates about guidance that might be helpful to you
-        - reuse information you provide between different services
-      prerequisites: "To create an account, you’ll need:"
-      prerequisites_list:
-        - an email address
-        - a mobile phone
-      cta_button: Create a GOV.UK account
+        - with email alerts
+        - with a GOV.UK account (this includes getting email alerts)
+      email:
+        heading: Email alerts
+        link: Subscribe to get email alerts
+        subtext: Get email alerts when guidance related to your Brexit transition results changes.
+      account:
+        heading: GOV.UK account
+        link: Create a GOV.UK account
+        subtext: Save your Brexit transition results and get email alerts about changes that may affect you. GOV.UK accounts are a trial. In future we plan to add more features so you can use your account with more services.
+      aim: This is separate from other government accounts (for example your personal tax account or Government Gateway)
       or: If you’ve already saved your Brexit transition results,
       alternative_path_link_text: sign in to your account
-      do_not_want_heading: If you do not want a GOV.UK account
-      do_not_want_intro: You can
-      do_not_want_link: get alerts and a link to your results
-      do_not_want_outro: instead.
