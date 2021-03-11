@@ -142,6 +142,12 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
   }
 
   Autocomplete.prototype.handleSearchQuery = function (query, populateResults) {
+    // Autocomplete is hidden for mobile so don't send a request if the results won't be shown
+    var $autocomplete = document.querySelector('.app-autocomplete-search__menu')
+    if ($autocomplete.offsetParent === null){
+        return
+    }
+
     statusMessage = 'Searching...'
     this.userEnteredQuery = query
 
@@ -162,7 +168,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
   Autocomplete.prototype.fetchSuggestions = function (query, populateResults) {
     var request = new XMLHttpRequest()
-    request.open('GET', 'http://search-autocomplete-api.london.cloudapps.digital/' + encodeURIComponent(query), true)
+    request.open('GET', 'https://search-autocomplete-api.london.cloudapps.digital/autocomplete_suggestions/' + encodeURIComponent(query), true)
       // Time to wait before giving up fetching the search api
     request.timeout = 5 * 1000
     request.onreadystatechange = function () {
