@@ -171,7 +171,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
   Autocomplete.prototype.fetchSuggestions = function (query, populateResults) {
     var request = new XMLHttpRequest()
-    request.open('GET', 'https://search-autocomplete-api.london.cloudapps.digital/autocomplete_suggestions/' + encodeURIComponent(query), true)
+    request.open('GET', 'https://search-autocomplete-api.staging.publishing.service.gov.uk/autocomplete_suggestions/' + encodeURIComponent(query), true)
       // Time to wait before giving up fetching the search api
     request.timeout = 5 * 1000
     request.onreadystatechange = function () {
