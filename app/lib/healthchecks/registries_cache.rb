@@ -6,7 +6,7 @@ module Healthchecks
 
     def status
       if in_warning_state?
-        :warning
+        :critical
       else
         :ok
       end
